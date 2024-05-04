@@ -1,0 +1,47 @@
+@import "colors";
+
+.nav {
+  height: 50px;
+  background-color: $orange;
+  list-style: none;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  &_logo {
+    padding: 5px 0;
+    margin-right: 1rem;
+  }
+  &_menu {
+    display: flex;
+    align-items: center;
+    &_links {
+      text-decoration: none;
+      color: $white;
+      display: inline-block;
+      position: relative;
+      // padding-bottom: 0.25rem;
+      margin: 1rem;
+      font-size: 1.3rem;
+      &::before {
+        content: "";
+        position: absolute;
+        background-color: $white;
+        height: 2px;
+        bottom: 0;
+        width: 0;
+        right: 0;
+        transition: width 0.25s ease-out;
+        background-image: linear-gradient(to left, $white, $orange);
+      }
+      &:hover::before {
+        width: 100%;
+        left: 0;
+        right: auto;
+      }
+    }
+  }
+}
